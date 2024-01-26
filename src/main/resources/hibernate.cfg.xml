@@ -1,0 +1,23 @@
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">org.postgresql.Driver</property>
+        <property name="connection.url">jdbc:postgresql://localhost:5432/bookstore</property>
+        <property name="connection.username">postgres</property>
+        <property name="hibernate.connection.password">postgres</property>
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- JDBC connection pool settings using built-in test pool -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        <mapping class="com.picsart.java.Books"/>
+        <mapping class="com.picsart.java.Customers"/>
+        <mapping class="com.picsart.java.Sales"/>
+
+    </session-factory>
+</hibernate-configuration>
